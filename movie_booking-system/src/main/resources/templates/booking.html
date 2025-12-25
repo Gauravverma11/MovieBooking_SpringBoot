@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirm Booking</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Confirm Booking</h2>
+
+    <p><b>Movie:</b> <span th:text="${movie.title}"></span></p>
+    <p><b>Show Time:</b>
+        <span th:text="${show.showDate}"></span>
+        |
+        <span th:text="${show.showTime}"></span>
+    </p>
+
+    <p><b>Selected Seats:</b>
+        <span th:each="s : ${selectedSeats}"
+              th:text="${s.seatNumber} + ' '"></span>
+    </p>
+
+    <p><b>Total Amount:</b> ₹<span th:text="${totalAmount}"></span></p>
+
+    <form th:action="@{/book}" method="post">
+        <input type="hidden" name="showId" th:value="${show.id}">
+        <input type="hidden" name="seatIds" th:value="${seatIds}">
+        <button type="submit">Confirm Booking</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shows</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Available Shows</h2>
+
+<div class="grid">
+    <div class="card" th:each="show : ${shows}">
+        <p>Date: <span th:text="${show.showDate}"></span></p>
+        <p>Time: <span th:text="${show.showTime}"></span></p>
+        <p>Price: ₹<span th:text="${show.price}"></span></p>
+        <a th:href="@{/seats/{id}(id=${show.id})}">
+            <button>Select Seats</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

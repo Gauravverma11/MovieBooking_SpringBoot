@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Seats</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Select Seats</h2>
+
+<div class="grid">
+    <div th:each="seat : ${seats}"
+         th:class="'seat ' + (${seat.status} == 'BOOKED' ? 'booked' : '')">
+        <span th:text="${seat.seatNumber}"></span>
+    </div>
+</div>
+
+</body>
+</html>

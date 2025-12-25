@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movies</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Now Showing</h2>
+
+<div class="grid">
+    <div class="card" th:each="movie : ${movies}">
+        <h3 th:text="${movie.title}"></h3>
+        <p>Language: <span th:text="${movie.language}"></span></p>
+        <p>Rating: <span th:text="${movie.rating}"></span></p>
+        <a th:href="@{/shows/{id}(id=${movie.id})}">
+            <button>View Shows</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

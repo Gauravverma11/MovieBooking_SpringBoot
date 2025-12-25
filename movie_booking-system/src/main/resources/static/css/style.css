@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+.container {
+    width: 400px;
+    margin: 80px auto;
+    background: #020617;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+h2 {
+    text-align: center;
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+input {
+    background: #020617;
+    border: 1px solid #334155;
+    color: #e5e7eb;
+}
+
+button {
+    background: #38bdf8;
+    color: #020617;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+.card {
+    background: #020617;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.seat {
+    padding: 10px;
+    background: #1e293b;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.seat.booked {
+    background: #7f1d1d;
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background: #16a34a;
+}
